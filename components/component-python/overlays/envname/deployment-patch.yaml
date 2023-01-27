@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: component-python
+  namespace: e2e-demo-mnud
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - env:
+        - name: var_name
+          value: test
+        image: quay.io/codewindbtle/test-images@sha256:8ebb658c008946aa8c67c401257eaf4f8f3260af4766408a0c9abd337b1297eb
+        name: container-image
+        resources: {}
+status: {}
